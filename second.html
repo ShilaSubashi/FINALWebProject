@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="second.css">
+</head>
+
+
+<body>
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <fieldset>
+        <br>
+        <label for="datemax">Date of birth</label>
+        <input type="date" id="datemax" name="datemax" min="1943-12-31" max="2005-12-31" required><br>
+        <label id="number-label">Height(cm): <br>
+            <input placeholder="Enter your height" id="height" name="height" type="number" min="100" max="300"
+                required />
+        </label><br>
+
+        <label id="number-label">What is your current weight(kg): <br>
+            <input placeholder="Enter your weight" id="weight" name="currentWeight" type="number" min="30" max="200"
+                required />
+        </label><br>
+
+        <label id="number-label">What is your target weight(kg): <br>
+            <input placeholder="Enter your weight" id="targetWeight" name="targetWeight" type="number" min="30"
+                max="200" required />
+        </label><br>
+
+        <label>My goal is to: <br>
+            <input class="inline" id="gain" name="gain" type="checkbox" required value="gain" /> Gain weight<br>
+            <input class="inline" id="muscle" name="muscle" value="muscle" type="checkbox" required /> Muscle
+            building/Strength training<br>
+            <input class="inline" id="loss" type="checkbox" name="loss" value="loss" required /> Weight loss<br>
+            <input class="inline" id="stress" name="stress" value="stress" type="checkbox" required /> Stress
+            reduction<br>
+            <input class="inline" id="appearance" name="appearance" value="appearance" type="checkbox" required />
+            Appearance and Aesthetics:<br>
+            <input class="inline" id="others" name="others" value="others" type="checkbox" required /> Others<br>
+        </label>
+
+        <label>Comments<br>
+            <textarea id="comments" name="others_goal_comments" rows="5" cols="20" placeholder="I want to achieve..."></textarea>
+         </label>
+         <br>
+         <br>
+         <input id="next" type="submit" value="Next" />
+      
+        <br>
+        <br>
+    </fieldset>
+</form>
+        
+    <script>
+        const nextButton = document.getElementById('next');
+
+nextButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (validateForm()) {
+        window.location.href = 'quest1.html';
+    }
+});
+
+function validateForm() {
+    const datemax = document.getElementById('datemax').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            const targetWeight = document.getElementById('targetWeight').value;
+            const comments = document.getElementById('comments').value;
+
+            if (!datemax || !height || !weight || !targetWeight) {
+                alert('Please fill out all the required fields.');
+                return false;
+            }
+    return true;
+}
+    
+    </script>
+</body>
+
+</html>

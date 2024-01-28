@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+</head>
+
+<body class="quest3">
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <div class="quest3">
+        <label><span class="label-text3">Which veggies don't you eat: </span></label><br>
+        <input class="inline" id="veggies1" name="veg_preference" type="checkbox" required value="veggies" /> I eat them all
+        <br>
+
+        <input class="inline" id="veggies2" name="veg_preference" value="green-beans" type="checkbox" required /> Green beans
+        <br>
+
+        <input class="inline" id="veggies3" type="checkbox" name="veg_preference" value="broccoli" required /> Broccoli
+        <br>
+
+        <input class="inline" id="veggies4" name="veg_preference" value="zucchini" type="checkbox" required /> Zucchini
+        <br>
+
+        <input class="inline" id="veggies5" name="veg_preference" value="lettuce" type="checkbox" required /> Lettuce
+        <br>
+        
+        <input class="inline" id="veggies6" name="veg_preference" value="tomatoes" type="checkbox" required /> Tomatoes
+        <br>
+
+    <br><input id="next" type="submit" value="Next" />
+    <script>
+        const nextButton = document.getElementById('next');
+
+        nextButton.addEventListener('click', function () {
+            const selectedCheckboxes = document.querySelectorAll('input[name="veg_preference"]:checked');
+
+            if (selectedCheckboxes.length > 0) {
+                // Proceed to the next page
+                window.location.href = 'quest4.html';
+            } else {
+                // Display an error message or alert
+                alert('Please select at least one option before proceeding.');
+            }
+        });
+    </script>
+    </div>
+    </body>
+    
+    </html>

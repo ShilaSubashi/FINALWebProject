@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+</head>
+
+<body class="quest6">
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <div class="quest6">
+        <label>Do you eat breakfast? </label><br>
+        <input class="inline" id="breakfast1" name="morning" type="radio" required value="yes" /> Of course!
+        <br>
+
+        <input class="inline" id="breakfast2" name="morning" value="sometimes" type="radio" required /> Sometimes
+        <br>
+
+        <input class="inline" id="breakfast3" type="radio" name="morning" value="no" required /> No, I usually skip it
+        <br>
+    <br><input id="next" type="submit" value="Next" />
+    <script>
+        const nextButton = document.getElementById('next');
+
+        nextButton.addEventListener('click', function () {
+            const selectedOption = document.querySelector('input[name="morning"]:checked');
+
+            if (selectedOption) {
+                // Proceed to the next page
+                window.location.href = 'quest7.html';
+            } else {
+                // Display an error message or alert
+                alert('Please select an option before proceeding.');
+            }
+        });
+    </script>
+    </div>
+    </body>
+    
+    </html>

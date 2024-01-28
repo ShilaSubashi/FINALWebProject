@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+       
+</head>
+
+<body>
+    <div class="content">
+        <h7>Thank you for joining the Wellness Club</h7><br>
+        <p>Your personalized plan will be sent to your email</p><br>
+        <p>“Healing takes courage, and we all have courage, even if we have to dig a little to find it.” – Tori Amos</p>
+    </div>
+    <form action="signup.php" method="post">
+
+        <input type="hidden" name="name" value="<?php echo htmlspecialchars($name); ?>">
+        <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
+        
+        <button type="submit" name="submit" style="padding: 10px 20px; font-size: 20px; cursor: pointer;">OK</button>
+    </form>
+</div>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin-left: 25%;
+        margin-top: 10%;
+        padding: 5%;
+        overflow: hidden;
+        background-image: url(end.png);
+        background-size: cover;
+    }
+
+    .content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    h7 {
+        color: black;
+        font-size: 30px;
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+
+    p {
+        color: black;
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-family: monospace;
+        font-weight: 900;
+    }
+</style>
+</body>
+
+</html>

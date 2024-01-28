@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+</head>
+
+<body class="quest5">
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <div class="quest5">
+        <label><span class="label-text5">How much time do you typically have for meal preparation per day?</span></label><br>
+        <input class="inline" id="time1" name="ability" type="radio" required value="up-to-30-minutes" /> Up to 30 minutes
+        <br>
+
+        <input class="inline" id="time2" name="ability" value="up-to-1-hour" type="radio" required /> Up to 1 hour
+        <br>
+
+        <input class="inline" id="time3" type="radio" name="ability" value="more-than-1-hour" required /> More than 1 hour
+        <br>
+    <br><input id="next" type="submit" value="Next" />
+    <script>
+        const nextButton = document.getElementById('next');
+
+        nextButton.addEventListener('click', function () {
+            const selectedOption = document.querySelector('input[name="ability"]:checked');
+
+            if (selectedOption) {
+                // Proceed to the next page
+                window.location.href = 'quest6.html';
+            } else {
+                // Display an error message or alert
+                alert('Please select an option before proceeding.');
+            }
+        });
+    </script>
+    </div>
+    </body>
+    
+    </html>

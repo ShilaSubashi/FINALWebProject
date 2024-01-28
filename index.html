@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Navigation Bar</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+ 
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <nav class="index">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About us</a></li>
+            <li><a href="#contactus">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <div style="display: none;">
+        <img src="gym.jpg" alt="">
+    </div>
+    </div>
+    
+    <script>
+        const imageUrls = ['gym.jpg'];
+
+function preloadImages() {
+    for (const url of imageUrls) {
+        const img = new Image();
+        img.src = url;
+    }
+}
+
+preloadImages();
+
+    </script>
+    
+
+    <fieldset>
+        <h1>Get Started</h1>
+        <div id="textToType"></div>
+    </fieldset>
+
+    <button id="joinTheClubButton" type="submit" onclick="joinTheClub()">Join the Club</button>
+
+    <script>
+        window.onload = function () {
+            const text = "Nothing tastes as good as healthy feels...";
+            const delay = 100;
+            const textElement = document.getElementById('textToType');
+
+            function typeWriter(text, i) {
+                if (i < text.length) {
+                    textElement.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(() => {
+                        typeWriter(text, i);
+                    }, delay);
+                }
+            }
+
+            typeWriter(text, 0);
+        };
+
+        function joinTheClub() {
+            window.location.href = "info.html";
+        }
+    </script>
+</body>
+
+</html>

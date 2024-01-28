@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="info.css" action="signup.php">
+</head>
+
+<body>
+    <div class="form">
+        
+        <h1 id="title">Welcome to the Wellness Club!<br>Building the best of you</h1>
+        <p id="description">Already a member? <a href="login.html" id="loginLink">Log in</a></p>
+        <form id="registration-form" method="post">
+            <label id="name-label">
+                FullName: <input placeholder="Enter your name" id="name" type="text" name="name" required="">
+            </label>
+            <br>
+            <label id="email-label">
+                Email: <input placeholder="Enter your email" id="email" type="email" name="email" required="">
+            </label>
+            <br>
+            <label for="password">Password:
+            <input placeholder="Enter your password" type="password" name="password" id="password" required>
+            </label>
+            <br>
+            <div class="gender">
+                <fieldset>
+                    <legend>Gender</legend>
+                    <div class="radio-group">
+                        <label for="Female">
+                            <input id="female" type="radio" name="gender" class="inline" value="Female">Female
+                        </label>
+                        <label for="Male">
+                            <input id="male" type="radio" name="gender" class="inline" value="Male">Male
+                        </label>
+                        <label for="Neutral">
+                            <input id="neutral" type="radio" name="gender" class="inline" value="Neutral"
+                                checked="">Neutral
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+            <br>
+            <input id="signup" type="submit" value="Sign Up" disabled>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    $("#registration-form").submit(function (e) {
+        e.preventDefault();
+
+        var isValidEmail = validateEmail();
+        var isValidPassword = validatePassword();
+
+        if (isValidEmail && isValidPassword) {
+            $.ajax({
+                type: "POST",
+                url: "signup.php",
+                data: $(this).serialize(),
+                success: function (response) {
+                    console.log(response);
+                    alert(response);
+                    window.location.href = 'second.html';
+                }
+            });
+        }
+    });
+
+    $("#email").on("input", function () {
+        validateEmail();
+    });
+
+    $("#password").on("input", function () {
+        validatePassword();
+    });
+
+    $("#signup").on("click", function () {
+    });
+});
+
+
+        function validateEmail() {
+            var emailInput = $("#email").val();
+            var isValidEmail = /\S+@\S+\.\S+/.test(emailInput);
+            if (isValidEmail) {
+                $("#signup").prop("disabled", false);
+                return true;
+            } else {
+                $("#signup").prop("disabled", true);
+                return false;
+            }
+        }
+
+        function validatePassword() {
+            var passwordInput = $("#password").val();
+            var isValidPassword = passwordInput !== '';
+            if (isValidPassword) {
+                $("#signup").prop("disabled", false);
+                return true;
+            } else {
+                $("#signup").prop("disabled", true);
+                return false;
+            }
+        }
+    </script>
+    </body>
+    
+    </html>

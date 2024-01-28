@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="info.css">
+</head>
+
+<body>
+    <h1 id="title">Log In</h1>
+    <p id="description">Don't have an account?<a href="info.html" id="loginLink">Register</a></p>
+    <form id="login-form" method= "post" action="signup.php">
+        <fieldset>
+            <label id="name-label">Email or Username<input placeholder="Enter your email or name" id="email" type="text"
+                    name="email" required /></label><br>
+            <label id="password-label">Password: <input placeholder="Enter your password" id="password" type="password"
+                    name="passwords" required /></label><br>
+            <br><input id="login" type="submit" value="Log In" />
+        </fieldset>
+    </form>
+    <script>
+        const login = document.getElementById('login');
+        login.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            if (!emailInput.value || !passwordInput.value) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            window.location.href = 'second.html';
+        });
+
+    </script>
+    </body>
+    
+    </html>

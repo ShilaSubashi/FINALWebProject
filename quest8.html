@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+</head>
+
+<body class="quest8">
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <div class="quest8">
+        <label><span class="label-text8">How physically active are you currently? </span></label><br>
+        <input class="inline" id="active1" name="times2" type="radio" required value="not-active" /> Not active (no workouts)
+        <br>
+
+        <input class="inline" id="active2" name="times2" value="rarely-active" type="radio" required /> Rarely active (1-2 workouts/week)
+        <br>
+
+        <input class="inline" id="active3" type="radio" name="times2" value="active" required /> Active
+        <br>
+    <br><input id="next" type="submit" value="Next" />
+   <script>
+    const nextButton = document.getElementById('next');
+
+    nextButton.addEventListener('click', function () {
+        const selectedOption = document.querySelector('input[name="times2"]:checked');
+
+        if (selectedOption) {
+            // Proceed to the next page
+            window.location.href = 'quest9.html';
+        } else {
+            // Display an error message or alert
+            alert('Please select an option before proceeding.');
+        }
+    });
+</script>
+</div>
+</body>
+
+</html>

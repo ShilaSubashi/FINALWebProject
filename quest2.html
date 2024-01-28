@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+</head>
+
+<body class="quest2">
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <div class="quest2">
+        <label><span class="label-text2">What’s your relationship with fish? </span></label><br>
+
+<input class="inline" id="fish1" name="fish_preference" type="radio" required value="love_fish" /> I love fish-I eat it all the time<br>
+
+<input class="inline" id="fish2" name="fish_preference" value="eat_occasionally_fish" type="radio" required /> I eat fish occasionally<br>
+
+<input class="inline" id="fish3" type="radio" name="fish_preference" value="eat_rarely_fish" required /> I eat fish rarely<br>
+
+<input class="inline" id="fish4" name="fish_preference" value="never_eat_fish" type="radio" required /> I never eat fish<br>
+
+    </div>
+
+    <br><input id="next" type="submit" value="Next" />
+    <script>
+        const nextButton = document.getElementById('next');
+
+        nextButton.addEventListener('click', function () {
+            const selectedOption = document.querySelector('input[name="fish_preference"]:checked');
+
+            if (selectedOption) {
+                // Proceed to the next page
+                window.location.href = 'quest3.html';
+            } else {
+                // Display an error message or alert
+                alert('Please select an option before proceeding.');
+            }
+        });
+    </script>
+    </body>
+    
+    </html>

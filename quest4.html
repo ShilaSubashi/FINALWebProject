@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Dev. project</title>
+    <link rel="stylesheet" href="quest.css">
+</head>
+
+<body class="quest4">
+    <form id="registration-form" method="post" action="signup.php"></form>
+    <div class="quest4">
+        <label>What kind of allergies do you have? </label><br>
+        <input class="inline" id="allergy1" name="allergies" type="checkbox" required value="none" /> None
+        <br>
+
+        <input class="inline" id="allergy2" name="allergies" value="lactose" type="checkbox" required /> Lactose
+        <br>
+
+        <input class="inline" id="allergy3" type="checkbox" name="allergies" value="gluten" required /> Gluten
+        <br>
+
+        <input class="inline" id="allergy4" name="allergies" value="peanuts" type="checkbox" required /> Peanuts
+        <br>
+
+        <input class="inline" id="allergy5" name="allergies" value="soy" type="checkbox" required /> Soy
+        <br>
+        
+        <input class="inline" id="allergy6" name="allergies" value="wheat" type="checkbox" required /> Wheat
+        <br>
+   
+    <br><input id="next" type="submit" value="Next" />
+    <script>
+        const nextButton = document.getElementById('next');
+
+        nextButton.addEventListener('click', function () {
+            const selectedCheckboxes = document.querySelectorAll('input[name="allergies"]:checked');
+
+            if (selectedCheckboxes.length > 0) {
+                // Proceed to the next page
+                window.location.href = 'quest5.html';
+            } else {
+                // Display an error message or alert
+                alert('Please select at least one option before proceeding.');
+            }
+        });
+    </script>
+    </div>
+    </body>
+    
+    </html>
