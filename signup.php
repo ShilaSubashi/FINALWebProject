@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $times = isset($_POST["times"]) ? trim($_POST["times"]) : '';
     $times2 = isset($_POST["times2"]) ? trim($_POST["times2"]) : '';
     $others = isset($_POST["others"]) ? trim($_POST["others"]) : '';
-    $date_of_birth = isset($_POST["datemax"]) ? $_POST["datemax"] : '';
+    $date_of_birth = isset($_POST["datemax"]) ? date("Y-m-d", strtotime($_POST["datemax"])) : "";
     $height = isset($_POST["height"]) ? (int)$_POST["height"] : 0;
     $current_weight = isset($_POST["currentWeight"]) ? (int)$_POST["currentWeight"] : 0;
     $target_weight = isset($_POST["targetWeight"]) ? (int)$_POST["targetWeight"] : 0;    
